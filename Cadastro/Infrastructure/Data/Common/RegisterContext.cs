@@ -1,6 +1,7 @@
 ﻿using Cadastro.Domain.Entities;
 using Cadastro.Infrastructure.Data.EntityConfig;
 using Microsoft.EntityFrameworkCore;
+using Cadastro.ViewModels;
 
 namespace Cadastro.Infrastructure.Data.Common
 {
@@ -23,5 +24,9 @@ namespace Cadastro.Infrastructure.Data.Common
             modelBuilder.ApplyConfiguration(new ClientMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
         }
+
+        public DbSet<Cadastro.ViewModels.ProductViewModel> ProductViewModel { get; set; }
+
+        public DbSet<Cadastro.ViewModels.ClientViewModel> ClientViewModels { get; set; }
     }
 }

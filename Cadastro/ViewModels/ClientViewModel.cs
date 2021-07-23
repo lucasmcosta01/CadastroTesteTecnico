@@ -1,4 +1,5 @@
 ﻿using Cadastro.Domain.Entities;
+using Habanero.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

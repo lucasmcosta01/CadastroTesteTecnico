@@ -1,5 +1,9 @@
+using Cadastro.Domain.Interfaces;
 using Cadastro.Infrastructure.Data.Common;
+using Cadastro.Infrastructure.Data.Repositories;
 using Cadastro.Infrastructure.ExtensionMethods;
+using Cadastro.Interfaces;
+using Cadastro.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,11 +26,19 @@ namespace Cadastro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRepositories().AddServices();
-
+            services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddAutoMapper(typeof(Startup));
 
+
+            string connectionString = Configuration.GetConnectionString("Register");
+
             services.AddDbContext<RegisterContext>(c =>
-                c.UseInMemoryDatabase("Register"));
+                c.UseInMemoryDatabase(connectionString));
+
+           
+           
 
             services.AddControllersWithViews();
         }

@@ -6,7 +6,7 @@ namespace Cadastro.Domain.Entities
     {
         public string Name { get; set; }
         public decimal Value { get; set; }
-        public bool Available { get; set; }
+        public bool Ative { get; set; }
 
         [ForeignKey("ClienttId")]
         public int ClientId { get; set; }

@@ -25,8 +25,8 @@ namespace Cadastro.ViewModels
         public decimal Value { get; set; }
 
         [Display(Name = "Disponível")]
-        [Required(ErrorMessage = "")]
-        public bool Active { get; set; }
+        [Required]
+        public bool Ative { get; set; }
 
         [Display(Name = "Nome")]
         [ForeignKey("ClienttId")]

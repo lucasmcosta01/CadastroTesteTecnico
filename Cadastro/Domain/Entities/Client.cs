@@ -11,6 +11,7 @@ namespace Cadastro.Domain.Entities
         public string Email { get; set; }
         public DateTime Date { get; set; }
         public bool Ative { get; set; }
+
     }
    
 }

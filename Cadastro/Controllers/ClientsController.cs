@@ -1,11 +1,9 @@
 ﻿using Cadastro.Interfaces;
 using Cadastro.ViewModels;
+using Habanero.Base;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cadastro.Controllers
 {
@@ -42,6 +40,7 @@ namespace Cadastro.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ClientViewModel viewModel)
         {
+
             try
             {
                 
@@ -58,6 +57,7 @@ namespace Cadastro.Controllers
                 return View(viewModel);
             }
         }
+      
 
         // GET: Clients/Edit/5
         public ActionResult Edit(int id)
